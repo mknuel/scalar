@@ -1,0 +1,86 @@
+.heading {
+    display: inline-block;
+    color: rgba($color: #000000, $alpha: 0.8);
+    &-pri {
+        font-size: 8.5rem;
+        font-weight: 200;
+        color: white;
+        animation: moveInUp .5s ease-in;
+        text-shadow: .5rem .5rem rgba($colorgrey-light, .4);
+        @include respond(tab-land) {
+            font-size: 10rem;
+            font-weight: 400;
+        }
+        @include respond(phone) {
+            font-size: 7rem;
+            font-weight: 400;
+        }
+    }
+    &-sec {
+        color: $colormain-dark;
+        font-size: 5.5rem;
+        @include respond(tab-land) {
+            font-size: 4.5rem;
+        }
+    }
+    &--light {
+        color: lightcyan;
+    }
+    &--dark {
+        color: $colorgrey-dark;
+    }
+    &-ter {
+        font-size: 3rem;
+        font-weight: 100;
+        animation: moveInUp .35s ease-in;
+        color: $colorfont-light;
+    }
+}
+
+.emphasis {
+    color: $colormain-light;
+}
+
+.paragraph {
+    width: 70%;
+    position: relative;
+    padding: 0;
+    text-overflow: clip;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    line-height: 2rem;
+    @include respond(tab-port) {
+        width: 100%;
+    }
+    &-light {
+        color: $colorgrey-dark;
+    }
+    &-dark {
+        color: $colorgrey-dark;
+    }
+    &-right {
+        float: right;
+        clear: both;
+    }
+    &__link {
+        color: $colorlink1;
+        display: block;
+        letter-spacing: .1px;
+        font-size: 1rem;
+        transition: .3s;
+        @include respond(tab-land) {
+            font-size: 1.3rem;
+        }
+        .arrow {
+            display: inline-block;
+            animation: .5s arrRight .4s infinite alternate;
+            animation-play-state: paused;
+        }
+        &:hover {
+            color: $colorlink2;
+        }
+        &:hover>.arrow {
+            animation-play-state: running;
+        }
+    }
+}

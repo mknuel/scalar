@@ -1,0 +1,97 @@
+.footer {
+    padding: 15rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    height: 45rem;
+    position: relative;
+    flex-basis: 100%;
+    width: 100%;
+    background-color: $colorlink2;
+    @include respond(phone) {
+        width: 100%;
+        padding: 10rem 0;
+        height: auto;
+    }
+    &__contain {
+        z-index: 20;
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        padding: 0 2rem;
+        justify-content: space-around;
+        // padding: ;
+    }
+    &__logo {
+        width: 20rem;
+    }
+    &__text {
+        border-top: 2px solid $colorbackground-light;
+        padding: 2rem 0;
+        width: 58rem;
+        letter-spacing: .1rem;
+        color: $colorwhite;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        @include respond(tab-land) {
+            width: 48rem;
+        }
+        @include respond(tab-port) {
+            width: 65rem;
+        }
+    }
+    &__img {
+        width: 20rem;
+    }
+    &__list {
+        border-top: 2px solid $colorbackground-light;
+        padding: 2rem 0;
+        width: 58rem;
+        @include respond(tab-land) {
+            width: 48rem;
+        }
+        @include respond(tab-port) {
+            width: 65rem;
+        }
+    }
+    &__item {
+        display: inline-block;
+        line-height: 1.5rem;
+        margin-right: 1rem;
+        padding: .5rem;
+        perspective: 1000px;
+        transition: .53s;
+        &:hover {
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: .2rem .3rem .5rem $colorgrey-light;
+        }
+    }
+    &__item:hover>&__link {
+        color: $colorlink1;
+    }
+    &__link {
+        color: $colorwhite;
+        font-size: 1.5rem;
+        font-weight: 0;
+        text-transform: capitalize;
+    }
+    .copy {
+        position: absolute;
+        color: $colorwhite;
+        font-size: 1rem;
+        font-weight: 50;
+        bottom: 0;
+        @include horCenter;
+    }
+}
+
+.svg {
+    position: absolute;
+    top: -6rem;
+    width: 100%;
+    @include respond(phone) {
+        top: -3rem;
+    }
+}

@@ -1,0 +1,422 @@
+//straight line across body
+.block__line-body {
+    position: absolute;
+    background-color: $colorbackground-light;
+    width: 16rem;
+    z-index: -1;
+    height: 60%;
+    left: 10rem;
+    top: 50vw;
+    @include respond(tab-port) {
+        display: none;
+    }
+}
+
+.block__obj-body {
+    position: absolute;
+    //background-color: $colorbackground-light;
+    width: 40%;
+    display: block;
+    z-index: -1;
+    height: 30rem;
+    right: 10%;
+    top: 45%;
+    //animation: shake 3s linear 2s infinite alternate;
+    //   border-radius: 51% 49% 40% 27% / 78% 81% 14% 18%;
+    img {
+        width: 100%;
+    }
+    @include respond(phone) {
+        top: 30%;
+        left: 10%;
+    }
+}
+
+.block__obj-body--small {
+    position: absolute;
+    //background-color: $colorbackground-light;
+    width: 10%;
+    display: block;
+    z-index: -1;
+    height: 5rem;
+    right: 30%;
+    top: 40%;
+    animation: moveUp 10s ease 0s infinite alternate;
+    opacity: 1;
+    //border-radius: 51% 49% 40% 27% / 78% 81% 14% 18%;
+    img {
+        width: 100%;
+    }
+    @include respond(phone) {
+        top: 30%;
+        left: 10%;
+    }
+}
+
+.block__obj-body--mid {
+    position: absolute;
+    //background-color: $colorbackground-light;
+    width: 20%;
+    display: block;
+    z-index: -1;
+    height: 15rem;
+    right: 20%;
+    top: 45%;
+    opacity: 1;
+    animation: moveUp 5s ease .5s infinite alternate-reverse backwards;
+    // border-radius: 51% 49% 40% 37% / 78% 81% 14% 18%;
+    img {
+        width: 100%;
+    }
+    @include respond(phone) {
+        top: 30%;
+        left: 10%;
+    }
+}
+
+//header section
+.header {
+    width: 100%;
+    height: 100vh;
+    min-height: 50vw;
+    display: flex;
+    position: relative;
+    z-index: 3;
+    justify-content: space-around;
+    position: relative;
+    flex-flow: column nowrap;
+    @include respond(tab-port) {
+        min-height: 100vw;
+        height: 100vh;
+        width: 100%;
+    }
+    #nav-toggle {
+        position: absolute;
+        top: 2rem;
+        display: none;
+        height: 2rem;
+        width: 2rem;
+        left: 2rem;
+        z-index: 1000;
+        &:checked~.header__navigation {
+            top: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        &:checked~.header__navigation-toggle {
+            top: 2rem;
+            transform: rotateZ(130deg);
+            width: 2.5rem;
+            &::before {
+                width: 2.5rem;
+                top: 0;
+                transform: rotateZ(-260deg);
+            }
+        }
+    }
+    &__navigation {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 10;
+        justify-content: space-between;
+        flex-basis: 7rem;
+        transition: ease-in-out .3s;
+        @include respond(tab-port) {
+            width: 100%;
+            top: -85%;
+            position: absolute;
+            visibility: hidden;
+            opacity: .4;
+            z-index: 50;
+            height: 100%;
+            background-color: $colorlink2;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &-toggle {
+            top: 2rem;
+            display: none;
+            right: 2rem;
+            @include respond(tab-port) {
+                &,
+                &::before {
+                    position: absolute;
+                    display: block;
+                    height: .3rem;
+                    width: 3rem;
+                    content: '';
+                    background-color: $colorfont-light;
+                    z-index: 1000;
+                    transition: ease-in-out .3s;
+                }
+                &::before {
+                    top: 1rem;
+                }
+            }
+        }
+        .icon-nav {
+            display: none;
+        }
+    }
+    &__overlay {
+        position: absolute;
+        display: none;
+        @include respond(tab-port) {
+            display: block;
+            background: linear-gradient(-200deg, $colormain-dark, $colormain-light);
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__info {
+        position: absolute;
+        z-index: 30;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        right: 2rem;
+        bottom: 1.5rem;
+        height: auto;
+        min-width: 30rem;
+        min-height: 15rem;
+        width: auto;
+        padding: 1rem 3rem;
+        background-color: rgba(white, .8);
+        @include respond(tab-port) {
+            width: 100%;
+            height: auto;
+            position: relative;
+            right: 0;
+            top: 0;
+            padding: 2rem;
+        }
+        &__content {
+            display: flex;
+            font-size: 1.3rem;
+            flex-flow: row wrap;
+            @include respond(tab-port) {
+                font-size: 2rem;
+                padding: 0 2rem;
+                line-height: 3.5rem;
+                width: 100%;
+            }
+            @include respond(phone) {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
+        .header__icon {
+            color: $colorgrey-dark;
+            font-size: 3rem;
+            @include respond(phone) {
+                font-size: 2rem;
+            }
+        }
+    }
+    .watermark {
+        font-size: 15rem;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        color: rgba(13, 13, 13, .2);
+        @include respond(phone) {
+            display: none;
+        }
+    }
+    .block__line {
+        position: absolute;
+        //left: 0;
+        right: 0;
+        top: -6rem;
+        height: 15rem;
+        width: .75rem;
+        background-color: $colormain-light;
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+    &__text {
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        height: auto;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        @include respond(tab-port) {
+            flex-flow: row wrap;
+            width: 100%;
+            height: 80%;
+            padding: 2rem 0;
+            align-items: center;
+        }
+        &__content {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 95rem;
+            height: 40%;
+            justify-content: space-evenly;
+            top: -3rem;
+            margin-bottom: 1rem;
+            text-align: left;
+            @include respond(tab-port) {
+                flex-flow: column;
+                width: 100%;
+                height: 50%;
+                justify-content: space-between;
+                padding: 2rem 4rem;
+                margin-bottom: 0;
+            }
+            @include respond(phone) {
+                width: 100%;
+                height: 100%;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                top: 0;
+                padding: 2rem;
+            }
+        }
+    }
+}
+
+.section__products {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    .product {
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+            width: 100%;
+            flex-wrap: wrap;
+            position: relative;
+            @include respond(tab-land) {
+                justify-content: space-evenly;
+            }
+        }
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 48%;
+            padding: 4rem 0;
+            @include respond(tab-land) {
+                min-width: auto;
+                width: 45rem;
+            }
+            @include respond(tab-port) {
+                width: 65rem;
+                text-align: left;
+                padding: 0;
+            }
+            @include respond(phone) {
+                width: 100%;
+                text-align: left;
+                padding: 0;
+            }
+        }
+    }
+    .btn-contain {
+        width: 15rem;
+        z-index: 30;
+        @include relCenter;
+        @include respond(tab-port) {
+            margin: 5rem 0;
+        }
+    }
+}
+
+.dispenser {
+    //background-color: $colormain-light;
+    //box-shadow: .5rem 2rem 4rem rgba($colorgrey-dark, .3);
+    flex-flow: row wrap;
+    @include respond(tab-port) {
+        flex-flow: column-reverse wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &__image {
+        transform: translateY(-5rem);
+        width: 55rem;
+        @include respond(tab-land) {
+            width: 51rem;
+        }
+        @include respond(tab-port) {
+            transform: translateY(0);
+        }
+        @include respond(phone) {
+            position: relative;
+            width: 100%;
+        }
+    }
+    &__text {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+    &__heading {
+        color: rgba(0, 0, 0, 0);
+        background-image: linear-gradient(to right, $colormain-dark 8rem, $colorgrey-dark 8rem 24rem, $colormain-dark 24rem);
+        -webkit-background-clip: text;
+        background-clip: text;
+        @include respond(tab-land) {
+            color: $colormain-dark;
+        }
+    }
+}
+
+.water {
+    flex-flow: row wrap;
+    @include respond(tab-port) {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    //background-color: $colormain-light;
+    //box-shadow: .5rem 2rem 4rem rgba($colorgrey-dark, .3);
+    &__image {
+        z-index: 6;
+        position: relative;
+        width: 60rem;
+        left: 0;
+        @include respond(tab-land) {
+            width: 51rem;
+        }
+        @include respond(tab-port) {
+            width: 65rem
+        }
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+    &__text {
+        justify-self: flex-end;
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+
+.section {
+    padding: 2rem;
+}
+
+.section__services {
+    margin-top: -10rem;
+    padding: 2rem 0;
+    width: 100%;
+    min-height: 25rem;
+    &__svg {
+        margin-bottom: -5rem;
+        transform: rotate(180deg);
+        @include respond(phone) {
+            margin-bottom: -2rem;
+        }
+    }
+}

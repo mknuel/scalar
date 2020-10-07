@@ -1,0 +1,85 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding: .5rem 2rem;
+    @include respond(tab-port) {
+        width: 75%;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    &__items {
+        list-style: none;
+        padding: 1rem;
+        font-size: 2rem;
+        font-weight: 100;
+        transition: .3s;
+        color: $colorfont-light;
+        text-transform: capitalize;
+        .active {
+            border-bottom: solid .15rem $colormain-light;
+        }
+        @include respond(tab-port) {
+            width: 80%;
+            @include relHorCenter;
+        }
+    }
+    &__list {
+        list-style: none;
+        padding: 2rem;
+        color: $colorfont-light;
+        text-transform: capitalize;
+    }
+    &__link {
+        font-size: inherit;
+        &:hover,
+        &:active {
+            color: $colormain-light;
+        }
+    }
+    &__logo {
+        padding: .5rem 2rem;
+        position: relative;
+        display: inline-flex;
+        .logo {
+            width: 15rem;
+            height: 7rem;
+            @include respond(tab-port) {
+                width: 25rem;
+                height: auto;
+            }
+        }
+    }
+    &__user {
+        list-style: none;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        height: 5rem;
+        line-height: 2rem;
+        font-weight: 100;
+        color: $colorfont-light;
+        border: double 3px $colorfont-light;
+        text-transform: capitalize;
+    }
+}
+
+.logo-main {
+    padding: 2rem;
+    position: relative;
+    display: none;
+    @include respond(tab-port) {
+        display: inline-flex;
+    }
+    .logo {
+        width: 15rem;
+        height: 7rem;
+        @include respond(tab-port) {
+            width: 25rem;
+            height: auto;
+        }
+        @include respond(phone) {
+            width: 15rem;
+        }
+    }
+}

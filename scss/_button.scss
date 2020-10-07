@@ -1,0 +1,64 @@
+.button {
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin: auto;
+    outline: none;
+    border: none;
+    position: relative;
+    &-scroll {
+        width: 8rem;
+        margin: 0;
+        left: 0;
+        bottom: -40vh;
+        padding: 0;
+        color: $colorfont-light;
+        font-size: 6.5rem;
+        font-weight: 600;
+        animation: moveInDown .6s ease-out;
+        z-index: 10;
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+    &-pri {
+        box-shadow: 0 0 2rem rgba($colorgrey-light, .3);
+        display: block;
+        width: 15rem;
+        border-radius: 1.5rem;
+        padding: 1.5rem 3.5rem;
+        color: $colormain-light;
+        float: left;
+        margin: 0;
+        font-size: 1.7rem;
+        transition: .35s;
+        background-size: 250%;
+        background-position: -160%;
+        background-image: linear-gradient(to right, $colorwhite 0%, $colorwhite 50%, $colormain-dark 50%);
+        &:active {
+            transform: translateY(.8rem) scale(.9);
+            //box-shadow: 0 .4rem 4rem rgba($colorgrey-light, .4);
+            box-shadow: 0rem 5rem 2rem -2rem rgba(55, 55, 55, 0.3);
+        }
+        &:hover {
+            background-position: -80%;
+            color: $colorwhite;
+            transition: .4s;
+        }
+    }
+    &-ter {
+        display: block;
+        font-size: 1.5rem;
+        background-color: rgba( #fff, 0);
+        padding: 1rem 2rem;
+        color: $colormain-dark;
+        float: right;
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .25s;
+        margin: 0;
+        &:hover {
+            background-color: #fff;
+            outline: .3rem double $colormain-dark;
+            outline-offset: .3rem
+        }
+    }
+}

@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "Scalar";
+    src: local(Futura Bk BT), url(../css/futura\ medium\ bt.ttf) format("truetype");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%; //1rem = 8px  
+    }
+    @include respond(tab-port) {
+        font-size: 50%; //1rem = 9px 
+    }
+    @include respond(phone) {
+        font-size: 50%; //1rem = 9px 
+    }
+}
+
+body {
+    font-family: "Scalar";
+    scroll-behavior: smooth;
+    font-weight: 50;
+    letter-spacing: 1px;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}

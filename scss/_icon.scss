@@ -1,0 +1,40 @@
+.icon {
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+    left: 0;
+    padding: 2rem;
+    top: 50%;
+    width: 10rem;
+    @include respond(tab-port) {
+        display: none;
+        padding: 2rem 4rem;
+        height: 10rem;
+        top: 0;
+    }
+    &-mobile {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        position: relative;
+        transition: .4s;
+        @include respond(tab-port) {
+            display: flex;
+            padding: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &__items {
+        padding: 0;
+        margin-bottom: .6rem;
+    }
+    &__social {
+        font-size: 3.5rem;
+        color: $colorfont-light;
+        margin-right: 1rem;
+        @include respond(tab-port) {
+            font-size: 4.5rem;
+        }
+    }
+}
